@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>Braintree</title>
+  <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+  <script>
+  var clientToken = "<%= clientToken %>";
+    braintree.setup(clientToken, "dropin", {
+  container: "payment-form"
+});
+    
+  </script>
+</head>
+
+<body>
+<h1><%= clientToken %></h1>
+  <form id="checkout" method="post" action="/purchases">
+    <div id="payment-form"></div>
+    <input type = "number" name = "amount" placeholder="Enter the amount">
+    <input type="submit" value="Pay">
+  </form>
+
+</body>
+
+</html>
