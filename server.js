@@ -24,7 +24,7 @@ var gateway = braintree.connect({
   publicKey: "",
   privateKey: ""
 });
-
+//generate temporary token
 app.get("/client_token", function(req, res) {
   gateway.clientToken.generate({}, function(err, response) {
     console.log(response.clientToken);
